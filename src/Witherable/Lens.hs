@@ -65,8 +65,8 @@ guarded
     => (a -> Bool) -> (a -> Withering f b)
     -> a -> Withering f b
 guarded p f a
-  | p a = f a
-  | otherwise = empty
+    | p a = f a
+    | otherwise = empty
 
 
 -- | Remove elements matched by a specific 'Withering' context if they
