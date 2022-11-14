@@ -28,7 +28,7 @@ import Witherable.Lens.Withering
 -- @'withered' . 'unwithered'@ will act like a type-restricted version
 -- of 'traverse' for all lawful instances of 'Witherable'.
 --
--- In some sense, this is a 'catch'-like combinator. This marks the
+-- In some sense, this is a @catch@-like combinator. This marks the
 -- point where removing elements stops propagating and actually
 -- modifies the structure being focused.
 withered
@@ -59,7 +59,7 @@ decayed :: Applicative f => pafb -> s -> Withering f t
 decayed _ _ = empty
 
 -- | Remove elements from the current 'Withering' context if they
--- don't match the predicate. This is similar in concept to 'filtered'
+-- don't match the predicate. This is similar in concept to @filtered@
 -- from lens. The major that instead of merely removing non-matching
 -- targets from the traversal, it removes those targets (and their
 -- parents up to the next 'withered' combinator) from the data
