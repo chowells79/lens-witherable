@@ -1,11 +1,10 @@
 Integrate witherable and lens.
 
 Based on the ideas from https://chrispenner.ca/posts/witherable-optics
-but I think this version has overall better ergonomics. This library
-uses an approach based on an additional combinator to restore full
-compatibility with lens combinators like `set` and `over`, which the
-approach in the blog has trouble with. Additionally, this approach
-gets rid of `Maybe` wrappers in results that are always `Just`.
+but with a more combinator-based approach to restore full
+compatibility with lens combinators like `set` and
+`over`. Additionally, this approach gets rid of `Maybe` wrappers in
+results that are always `Just`.
 
 This library is based on a variant of `Traversal`s with the type
 `forall f. Applicative f => ((a-> Withering f b) -> s -> f t)`. Note
