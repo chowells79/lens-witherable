@@ -59,7 +59,11 @@ decayed :: Applicative f => pafb -> s -> Withering f t
 decayed _ _ = empty
 
 -- | Remove elements from the current 'Withering' context if they
--- don't match the predicate.
+-- don't match the predicate. This is similar in concept to 'filtered'
+-- from lens. The major that instead of merely removing non-matching
+-- targets from the traversal, it removes those targets (and their
+-- parents up to the next 'withered' combinator) from the data
+-- structure entirely.
 guarded
     :: Applicative f
     => (a -> Bool) -> (a -> Withering f b)
