@@ -118,5 +118,9 @@ input. The `rewithered` descends into the sublists and sets each of
 them as the catch point for later pruning. The second `guarded` strips
 out all non-even entries in each list. The `unwithered` restores
 compatibility with lens combinators like `(+~)`, which is used to
-modify every remaining focused value.
-
+modify every remaining focused value. Note the presence of the `[]` in
+the output list. The `guarded` combinator violates the lens laws in
+the same manner as `filtered`, where behavior might change with
+refactoring. This doesn't mean it's dangerous to use, merely that you
+have to pay attention to changes in behavior when refactoring chains
+involving it.
