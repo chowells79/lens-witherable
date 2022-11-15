@@ -3,7 +3,7 @@
 {-|
 Module      : Witherable.Lens.Withering
 Description : MaybeT replacement type
-Copyright   : (c) Carl Howells, 2021
+Copyright   : (c) Carl Howells, 2021-2022
 License     : MIT
 Maintainer  : chowells79@gmail.com
 
