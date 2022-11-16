@@ -1,6 +1,6 @@
 cabal-version:        2.4
 name:                 lens-witherable
-version:              0.1.0.1
+version:              0.1.0.2
 synopsis:             lens-compatible tools for working with witherable
 copyright:            Copyright (C) 2021-2022 Carl Howells
 license:              MIT
@@ -25,12 +25,12 @@ library
     hs-source-dirs:   src
 
     if flag(top-level-witherable)
-       cpp-options:   -DTOP_LEVEL_WITHERABLE
-       build-depends: witherable >= 0.4 && < 0.5,
-                      base >=4.9 && <5,
+       build-depends: witherable >=0.4 && <0.5,
+                      base >=4.10 && <5,
     else
-       build-depends: witherable >= 0 && < 0.5,
-                      base >=4.8 && <4.16
+       build-depends: witherable >=0 && <0.5,
+                      base >=4.10 && <4.16
+       mixins:        witherable (Data.Witherable as Witherable)
 
 
 flag top-level-witherable

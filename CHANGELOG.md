@@ -1,5 +1,9 @@
 # Revision history for lens-witherable
 
+## 0.1.0.2 -- 2022-11-16
+
+* Discovered cabal mixins. No longer using CPP, but now requiring GHC 8.2 or newer
+
 ## 0.1.0.1 -- 2022-11-14
 
 * Add support for older versions of dependencies with cabal flags and CPP.

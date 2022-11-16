@@ -1,4 +1,3 @@
-{-# Language CPP #-}
 {-|
 Module      : Witherable.Lens
 Description : Tools for using the Witherable interface with lens
@@ -12,11 +11,7 @@ module Witherable.Lens where
 
 import Data.Functor.Identity (Identity(runIdentity))
 
-#ifdef TOP_LEVEL_WITHERABLE
 import Witherable (Witherable(wither))
-#else
-import Data.Witherable (Witherable(wither))
-#endif
 
 import Witherable.Lens.Withering
 
