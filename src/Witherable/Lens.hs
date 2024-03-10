@@ -60,10 +60,9 @@ decayed _ _ = empty
 
 -- | Remove elements from the current 'Withering' context if they
 -- don't match the predicate. This is similar in concept to @filtered@
--- from lens. The major that instead of merely removing non-matching
--- targets from the traversal, it removes those targets (and their
--- parents up to the next 'withered' combinator) from the data
--- structure entirely.
+-- from lens but instead of merely removing non-matching
+-- targets from the traversal, it removes those targets and their
+-- parents up to the next 'withered' combinator.
 guarded
     :: Applicative f
     => (a -> Bool) -> (a -> Withering f b)
@@ -78,15 +77,28 @@ guarded p f a
 filterOf
     :: ((a -> Withering Identity a) -> s -> Identity s)
     -> (a -> Bool) -> s -> s
-filterOf w p = runIdentity . w (guarding p)
+filterOf w p = runIdentity . w toWithering
   where
-    guarding p a
+    toWithering a
         | p a = pure a
         | otherwise = empty
 infix 2 `filterOf`
 
+-- | Remove elements matched by a specific 'Withering' context if they
+-- don't match a predicate returning a result in an arbitrary
+-- Applicative context.
+filterOfA
+    :: Applicative f
+    => ((a -> Withering f a) -> s -> f s)
+    -> (a -> f Bool) -> s -> f s
+filterOfA w p = w toWitheringA
+  where
+    toWitheringA a = Withering $ (\x -> if x then Just a else Nothing) <$> p a
+infix 2 `filterOfA`
+
 -- | Transform and filter elements matched by a specific 'Withering'
--- context, a la 'Data.Maybe.mapMaybe'.
+-- context, a la 'Data.Maybe.mapMaybe'. See 'witherOf' for a more
+-- flexible version that works within arbitrary 'Applicative' effects.
 mapMaybeOf
     :: ((a -> Withering Identity b) -> s -> Identity t)
     -> (a -> Maybe b) -> s -> t
