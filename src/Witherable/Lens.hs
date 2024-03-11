@@ -24,6 +24,7 @@ import Data.Hashable (Hashable)
 import Data.HashSet (HashSet)
 import qualified Data.HashSet as H
 
+-- * Basic API
 
 -- | A variant on 'traverse' that allows the targets to be filtered
 -- out of the 'Witherable' structure. Note that this introduces a
@@ -82,8 +83,7 @@ guarded p f a
 
 
 
---------------------------------------------------------
--- Port deprecated definitions over from Data.Witherable
+-- * Functions consuming withering lens-likes
 
 -- | Transform and effectfully filter elements matched by a specific
 -- 'Withering' context, a la 'wither'.

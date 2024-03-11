@@ -1,8 +1,12 @@
 # Revision history for lens-witherable
 
+## 0.2.0.1 -- 2024-03-10
+
+* Arrange documentation slightly better.
+
 ## 0.2.0.0 -- 2024-03-10
 
-* Rename filterOfA -> filterAOf, port over deprecated lenslike functions from witherable
+* Rename filterOfA -> filterAOf, port over deprecated lenslike functions from witherable.
 
 ## 0.1.1.0 -- 2024-03-10
 
@@ -10,7 +14,7 @@
 
 ## 0.1.0.2 -- 2022-11-16
 
-* Discovered cabal mixins. No longer using CPP, but now requiring GHC 8.2 or newer
+* Discovered cabal mixins. No longer using CPP, but now requiring GHC 8.2 or newer.
 
 ## 0.1.0.1 -- 2022-11-14
 
