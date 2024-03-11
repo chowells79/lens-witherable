@@ -1,5 +1,9 @@
 # Revision history for lens-witherable
 
+## 0.2.0.0 -- 2024-03-10
+
+* Rename filterOfA -> filterAOf, port over deprecated lenslike functions from witherable
+
 ## 0.1.1.0 -- 2024-03-10
 
 * Add filterOfA, some doc cleanups.
