@@ -1,5 +1,9 @@
 # Revision history for lens-witherable
 
+## 0.2.0.2 -- 2024-03-10
+
+* Fix copyright dates
+
 ## 0.2.0.1 -- 2024-03-10
 
 * Arrange documentation slightly better.

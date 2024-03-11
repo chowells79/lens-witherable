@@ -1,7 +1,7 @@
 {-|
 Module      : Witherable.Lens
 Description : Tools for using the Witherable interface with lens
-Copyright   : (c) Carl Howells, 2021-2022
+Copyright   : (c) Carl Howells, 2021-2024
 License     : MIT
 Maintainer  : chowells79@gmail.com
 
